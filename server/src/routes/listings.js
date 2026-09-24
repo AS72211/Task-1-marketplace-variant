@@ -4,11 +4,18 @@ import {
   getListing,
   createListing,
   updateListing,
-  deleteListing
+  deleteListing,
+  markListingAsSold
 } from '../controllers/listingController.js';
 
 const router = Router();
 
+router.get('/', getAllListings);
+router.get('/:id', getListing);
+router.post('/', createListing);
+router.patch('/:id', updateListing);
+router.delete('/:id', deleteListing);
+router.patch('/:id/sold', markListingAsSold);
 // TODO: wire up the routes described in README.md section 3.
 
 export default router;
